@@ -1,14 +1,16 @@
 <%- include ("partials/index/header.ejs") %>
 
-<body class="h-full">
+<body class="h-auto">
   <div class="h-full relative bg-white-700 overflow-hidden">
-    <div class="max-w-7xl mx-auto">
+    <div class="max-w-7xl h-3/4 mx-auto">
         <%- include ("partials/index/navbar.ejs") %>
         <div class="relative z-10 pb-8 bg-white-700 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
-          <%- include ("partials/index/main.ejs") %>
+          <%- include ("partials/index/banner.ejs") %>
           <%- include ("partials/index/mobile.ejs") %>
         </div>
       </div>
+      <%- include ("partials/index/band.ejs") %>
+      <%- include ("partials/index/banner_tracking.ejs") %>
     </div>
     
 </body>
