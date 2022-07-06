@@ -11,7 +11,7 @@ app.set('view engine', 'ejs');
 // app.set(express.static(path.join(__dirname, 'public')));
 app.use('/public/', express.static('public'));
 
-var urlencodedParser = bodyParser.urlencoded({extended: false});
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 //routes
 
@@ -19,12 +19,12 @@ app.get('/dados', function(req, res) {
     const rast = req.body.response;
     // res.render('index');
 
-    rastreio = new rastrearEncomendas(rast)
+    rastreio = new rastrearEncomendas(rast);
     //track order
     rastreio.then((response) => {
-        if(response == undefined) {
+        if (response == undefined) {
             const result = response[0].eventos.reverse();
-            result.forEach(item =>{
+            result.forEach(item => {
                 var codigo = item.codigo;
                 var descricao = item.descricao;
                 var dtHrCriado = item.dtHrCriado;
@@ -46,18 +46,26 @@ app.post('/', urlencodedParser, (req, res) => {
     };
 
     res.end(JSON.stringify(response));
-    
+
 });
 
 app.get('/', function(req, res) {
     res.render('index');
 });
 
+app.get('/login', function(req, res) {
+    res.render('login');
+})
+
+app.get('/dashboard', function(req, res) {
+    res.render('dashboard');
+})
+
 app.get('/tracking', function(req, res) {
     res.render('tracking');
 });
 
 app.listen(3000, function(erro) {
-    if(erro) console.log('ocorreu um erro!');
+    if (erro) console.log('ocorreu um erro!');
     else console.log('servidor iniciando com sucesso!');
 });
