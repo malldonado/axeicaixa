@@ -2,7 +2,9 @@ module.exports = {
   purge: [],
   darkMode: false,
   theme: {
-    extend: {}
+    maxWidth: {
+      '1/2': '76%',
+    }
   },
   variants: {
     extend: {
@@ -10,3 +12,4 @@ module.exports = {
   },
   plugins: [],
 }
+
