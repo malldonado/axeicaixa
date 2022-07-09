@@ -1,0 +1,8 @@
+.overflow-y-scroll::-webkit-scrollbar {
+    width: 20px;
+}
+
+.overflow-y-scroll::-webkit-scrollbar-thumb {
+    background-color: #312e81;
+    border-radius: 8px;
+}
