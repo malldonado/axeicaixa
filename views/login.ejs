@@ -1,8 +1,15 @@
 <%- include ("partials/index/header.ejs") %>
-    <div class="h-[300px] fixed">
-        <form class="flex items-center justify-center w-[600px] m-auto" action="">
-            <input name="login" class="h-18 w-9 border-black border-2">
-        </form>
+<div class="flex h-full w-full fixed">
+    <div class="h-full w-[50%]"></div>
+    <form class="w-[50%] m-auto flex justify-center" action="">
+        <div>
+            <input name="login" type="text" class="p-2.5 mb-4 block h-12 w-[400px] border-indigo-600 border-2 rounded-md" placeholder="name">
+            <input name="login" type="password" class="p-2.5 mb-4 block h-12 w-[400px] border-indigo-600 border-2 rounded-md" placeholder="password">
+            <button class="bg-indigo-600 w-full h-12 rounded text-white font-medium">Acessar</button>
+        </div>
+    </form>
+    <div>
+        <input type="checkbox" checked>
+        <p>Remember me</p>
     </div>
-    <%- include ("partials/index/final_footer.ejs") %>
-        <%- include ("partials/index/footer.ejs") %>
+</div>

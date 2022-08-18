@@ -19,22 +19,23 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 app.post('/dados', function(req, res) {
 
-    let codRastreio = req.body.dados;
+    let codRastreio = req.body.dados; 
     console.log(codRastreio); // use -> app.use(express. urlencoded());
 
+    rastrearEncomendas([codRastreio]).then(response => {
+        console.log(response[0]);
+        res.render("tracking", {response: response}); //use redis for save code tracking
+    });
+
 });
 
-app.get('/dados', function(req, res) {
+// app.get('/dados', function(req, res) {
 
-    var codigo = req.body.tracking;
+//     var codigo = req.body.tracking;
 
-    console.log(codigo)
+//     console.log(codigo)
 
-    // rastrearEncomendas([codigo]).then(response => {
-    //     console.log(response[0]);
-    //     // res.json({ message: 'ok', response });
-    // });
-});
+// });
 
 
 app.get('/', function(req, res) {
@@ -49,9 +50,9 @@ app.get('/dashboard', function(req, res) {
     res.render('dashboard');
 })
 
-// app.get('/tracking', function(req, res) {
-//     res.render('tracking');
-// });
+app.get('/tracking', function(req, res) {
+    res.render('tracking');
+});
 
 app.listen(3000, function(erro) {
     if (erro) console.log('ocorreu um erro!');
