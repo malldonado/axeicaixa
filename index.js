@@ -24,19 +24,10 @@ app.post('/dados', function(req, res) {
 
     rastrearEncomendas([codRastreio]).then(response => {
         console.log(response[0]);
-        res.render("tracking", {response: response}); //use redis for save code tracking
+        res.render("tracking", {response: response[0]}); //use redis for save code tracking
     });
 
 });
-
-// app.get('/dados', function(req, res) {
-
-//     var codigo = req.body.tracking;
-
-//     console.log(codigo)
-
-// });
-
 
 app.get('/', function(req, res) {
     res.render('index');
