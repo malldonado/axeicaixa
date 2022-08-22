@@ -16,8 +16,24 @@ app.use(express. urlencoded()); //the parse of body at formart url encoded
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 //routes
+app.get('/', function(req, res) {
+    res.render('index');
+});
 
-app.post('/dados', function(req, res) {
+
+app.get('/cep', function(req, res) {
+    res.render('cep');
+});
+
+app.get('/dashboard', function(req, res) {
+    res.render('dashboard');
+});
+
+app.get('/doubts', function(req, res) {
+    res.render('doubts');
+});
+
+app.post('/tracking', function(req, res) {
 
     let codRastreio = req.body.dados; 
     console.log(codRastreio); // use -> app.use(express. urlencoded());
@@ -29,70 +45,23 @@ app.post('/dados', function(req, res) {
 
 });
 
-app.get('/', function(req, res) {
-    res.render('index');
-});
-
 app.get('/login', function(req, res) {
     res.render('login');
 })
 
-app.get('/dashboard', function(req, res) {
-    res.render('dashboard');
-});
+app.get('/profile', function(req, res) {
+    res.render('profile');
+})
 
-app.get('/doubts', function(req, res) {
-    res.render('doubts');
-});
+app.get('/register', function(req, res) {
+    res.render('register');
+})
 
-app.get('/tracking', function(req, res) {
-    res.render('tracking');
+app.get('/terms', function(req, res) {
+    res.render('terms');
 });
 
 app.listen(3000, function(erro) {
     if (erro) console.log('ocorreu um erro!');
     else console.log('servidor iniciando com sucesso!');
 });
-
-
-//RASCUNHO
-// app.post('/dados', function(req, res) {
-   
-
-//     rastreio = new rastrearEncomendas(rast);
-//     //track order
-//     rastreio.then((response) => {
-//         if (response == undefined) {
-//             const result = response[0].eventos.reverse();
-//             result.forEach(item => {
-//                 var codigo = item.codigo;
-//                 var descricao = item.descricao;
-//                 var dtHrCriado = item.dtHrCriado;
-//                 var tipo = item.tipo;
-//                 var unidade = item.unidade;
-//                 var urlIcone = item.urlIcone;
-//                 console.log(result);
-//                 res.json({ message: 'ok', rast, result });
-//             });
-//         } else {
-//             res.redirect('/');
-//         }
-//     });
-// });
-
-
-// let codRastreio = ['OU341933668BR', 'LB290784401HK']; // array de códigos de rastreios
-
-// rastrearEncomendas(codRastreio).then(response => {
-//   console.log(response[0].eventos.reverse());
-//   // O reverse é apenas para organizarmos os dados do rastreio do mais antigo para o mais recente !
-// });
-
-// app.post('/', urlencodedParser, (req, res) => {
-//     response = {
-//         tracking: req.body.tracking
-//     };
-
-//     res.end(JSON.stringify(response));
-
-// });
