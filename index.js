@@ -39,7 +39,11 @@ app.get('/login', function(req, res) {
 
 app.get('/dashboard', function(req, res) {
     res.render('dashboard');
-})
+});
+
+app.get('/doubts', function(req, res) {
+    res.render('doubts');
+});
 
 app.get('/tracking', function(req, res) {
     res.render('tracking');

@@ -11,3 +11,7 @@ https://get.rastreio.net/
 https://rastreiozap.com/
 https://www.muambator.com.br/
 https://www.melhorrastreio.com.br/
+
+
+para salvar session e cookie
+redis
