@@ -1,9 +1,9 @@
 import Navbar from "../Navbar/Navbar.tsx";
 import Banner from '../Banner/Banner.tsx';
-import BannerSVG from "../banner/banner.svg";
-import BannerTrackingSVG from '../BannerTracking/bannerTracking.svg';
-import BannerTracking from '../BannerTracking/BannerTracking.tsx';
-import Help from '../Help/Help.tsx';
+import BannerSVG from "../../../../img/banner.svg";
+import Wave from '../../../../img/wave.svg';
+import Tracking from '../Tracking/Tracking.tsx';
+// import Help from '../Help/Help.tsx';
 
 function container() {
   return (
@@ -15,9 +15,8 @@ function container() {
             <img className="w-[50%]" src={BannerSVG} alt="" />
           </div>
         </div>
-        <img src={BannerTrackingSVG} alt="" />
-        <BannerTracking/>
-        <Help/>
+        <img src={Wave} alt="" />
+        <Tracking/>
       </div>
   );
 }

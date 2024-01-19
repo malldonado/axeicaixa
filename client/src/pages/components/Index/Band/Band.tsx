@@ -1,9 +1,11 @@
+import '../../../index.css';
+
 function Band() {
   return (
     <div className="bg-indigo-700">
-      <div className="max-w-[90%] mx-auto py-3 sm:px-6 lg:px-8">
+      <div className="max-w-[100%] mx-auto py-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between flex-wrap">
-          <div className="w-0 flex-1 flex justify-end items-center">
+          <div className="w-0 flex-1 flex justify-start items-center">
             <button className="flex p-2 hover:bg-indigo-500 rounded-lg bg-indigo-600">
               <svg
                 className="h-6 w-6 text-white"
@@ -22,20 +24,13 @@ function Band() {
             </svg>
             </button>
             <p className="ml-3 font-medium text-white truncate">
-              <span className="hidden md:inline">
+              <span className="hidden md:inline nunito-font">
                 {" "}
                 Ativa suas notificações para acompanhar seu pedido
               </span>
             </p>
           </div>
           <div className="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
-            {/* <a
-              href="#"
-              className="flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-extrabold text-indigo-600 bg-white hover:bg-indigo-50"
-            >
-              {" "}
-              Ativar{" "}
-            </a> */}
           </div>
         </div>
       </div>
