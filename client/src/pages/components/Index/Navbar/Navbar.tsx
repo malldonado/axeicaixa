@@ -4,6 +4,7 @@ import { FaUserAstronaut } from 'react-icons/fa';
 import Logo from '../../../../img/logo.svg';
 import '../../../index.css';
 import ModalLogin from '../Modal/ModalLogin';
+import ModalRegister from '../Modal/ModalRegister';
 import { IoCloseSharp } from 'react-icons/io5';
 
 Modal.setAppElement('#root');
@@ -26,14 +27,24 @@ function Navbar() {
     },
   };
 
-  const [modalIsOpen, setISOpen] = useState(false);
+  const [modalIsOpenLogin, setISOpenLogin] = useState(false);
+  const [modalIsOpenRegister, setISOpenRegister] = useState(false);
 
-  function openModal() {
-    setISOpen(true);
+  function openModalLogin() {
+    setISOpenLogin(true);
   }
 
-  function closeModal() {
-    setISOpen(false);
+  function closeModalLogin() {
+    setISOpenLogin(false);
+  }
+
+  function openModalRegister() {
+    setISOpenLogin(false);
+    setISOpenRegister(true);
+  }
+
+  function closeModalRegister() {
+    setISOpenRegister(false);
   }
 
   return (
@@ -52,7 +63,7 @@ function Navbar() {
           <span className="sr-only nunito-font">Open main menu</span>
         </button>
         <button
-          onClick={openModal}
+          onClick={openModalLogin}
           className="hidden w-full md:block md:w-auto"
           id="mobile-menu"
         >
@@ -63,16 +74,37 @@ function Navbar() {
           </ul>
         </button>
         <Modal
-          isOpen={modalIsOpen}
-          onRequestClose={closeModal}
-          contentLabel="Example Modal"
+          isOpen={modalIsOpenLogin}
+          onRequestClose={closeModalLogin}
+          contentLabel="Login"
           style={customStyles}
         >
           <ModalLogin />
           <IoCloseSharp
-            onClick={closeModal}
+            onClick={closeModalLogin}
             className="text-[30px] right-[10px] top-[10px] absolute fill-[#4f46e5] cursor-pointer"
           />
+          <p className="max-w-[90%] mx-auto mt-4 nunito-font text-black text-[14px] font-normal">
+            Don't have an account?{' '}
+            <a
+              className="text-[#4f46e5] cursor-pointer text-[15px] font-bold"
+              onClick={openModalRegister}
+            >
+              Sign up
+            </a>
+          </p>
+        </Modal>
+        <Modal
+          isOpen={modalIsOpenRegister}
+          onRequestClose={closeModalRegister}
+          contentLabel="Register"
+          style={customStyles}
+        >
+          <IoCloseSharp
+            onClick={closeModalRegister}
+            className="text-[30px] right-[10px] top-[10px] absolute fill-[#4f46e5] cursor-pointer"
+          />
+          <ModalRegister />
         </Modal>
       </div>
     </div>
