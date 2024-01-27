@@ -1,6 +1,6 @@
-import Container from './components/Index/Container/Container';
+import Container from '../components/Index/Container/Container';
 // import Footer from './components/Index/Footer/Footer';
-import Band from './components/Index/Band/Band';
+import Band from '../components/Index/Band/Band';
 
 function index() {
   return (

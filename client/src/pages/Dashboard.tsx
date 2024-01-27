@@ -1,4 +1,4 @@
-import Navbar from "./components/Dashboard/Navbar/Navbar";
+import Navbar from "../components/Dashboard/Navbar/Navbar";
 
 function Dashboard() {
     return (

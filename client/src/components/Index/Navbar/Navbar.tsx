@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Modal from 'react-modal';
 import { FaUserAstronaut } from 'react-icons/fa';
-import Logo from '../../../../img/logo.svg';
+import Logo from '../../../img/logo.svg';
 import '../../../index.css';
 import ModalLogin from '../Modal/ModalLogin';
 import ModalRegister from '../Modal/ModalRegister';

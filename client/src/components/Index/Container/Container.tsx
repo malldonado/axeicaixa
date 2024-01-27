@@ -1,7 +1,7 @@
 import Navbar from "../Navbar/Navbar.tsx";
 import Banner from '../Banner/Banner.tsx';
-import BannerSVG from "../../../../img/banner.svg";
-import Wave from '../../../../img/wave.svg';
+import BannerSVG from "../../../img/banner.svg";
+import Wave from '../../../img/wave.svg';
 import Tracking from '../Tracking/Tracking.tsx';
 // import Help from '../Help/Help.tsx';
 

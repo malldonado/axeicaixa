@@ -1,4 +1,4 @@
-import LogoModal from '../../../../img/logo.svg'
+import LogoModal from '../../../img/logo.svg'
 
 function ModalLogin() {
 
